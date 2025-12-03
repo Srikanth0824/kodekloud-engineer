@@ -67,7 +67,8 @@ Once deployment completes:
    - **Size:** 2 GiB  
    - **Disk type:** Standard HDD (LRS)  
    - **Disk state:** Unattached (since it's not attached to any VM yet)  
-![disk verification](assets/day14_04.png)
+
+  ![disk verification](assets/day14_04.png)
 
 **Important Considerations:**
 - **Disk State:** The disk will initially be in an "Unattached" state until you attach it to a VM
