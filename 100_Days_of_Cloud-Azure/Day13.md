@@ -33,7 +33,7 @@ First, ensure that the `datacenter-vm` is in a running state.
 
 #### **Step 2: Copy the SSH public key from Azure Client Host**
 
-Check if the SSH public key exists on the Azure client host.
+Check and copy if the SSH public key exists on the Azure client host.
 ```bash
 cat /root/.ssh/id_rsa.pub
 ```
@@ -76,7 +76,7 @@ vi /root/.ssh/authorized_keys
 ```
 ![edit authorized_keys](assets/day13_06.png)
 
-Paste the public key content (from Step 4) into this file. Each key should be on a separate line.
+Paste the public key content (from Step 2) into this file. Each key should be on a separate line.
 
 #### **Step 7: Set Proper Permissions for authorized_keys**
 
