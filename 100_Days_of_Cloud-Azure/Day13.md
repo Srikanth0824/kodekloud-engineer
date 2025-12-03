@@ -89,7 +89,7 @@ chmod 600 /root/.ssh/authorized_keys
 chown root:root /root/.ssh/authorized_keys
 ```
 
-#### **Step 10: Verify SSH as root**
+#### **Step 8: Verify SSH as root**
 
 Check if you are able to SSH to the `datacenter-vm` vm as `root` user. From the Azure client host terminal:  
 ```bash
