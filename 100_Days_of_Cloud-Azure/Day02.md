@@ -70,9 +70,9 @@ Azure will now provision the Virtual Machine.
 ### **Step 8: SSH into the VM**
 Once deployment completes:
 
-1. Go to **Virtual Machines → datacenter-vm**  
-2. Copy the public IP address  
-3. SSH into the VM from a terminal:
+- Go to **Virtual Machines → datacenter-vm**  
+- Copy the public IP address  
+- SSH into the VM from a terminal:
 
 ```bash
 ssh -i <your_key.pem> <username>@<PublicIP>

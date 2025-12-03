@@ -100,7 +100,7 @@ In User Data section
 ```bash
 #!/bin/bash
 sudo apt-get update
-sudo apt-get install -y ngin
+sudo apt-get install -y nginx
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
