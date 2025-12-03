@@ -12,12 +12,12 @@ Make sure that the virtual machine initialization has been completed before subm
 
 ## Solution
 
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Stop the Virtual Machine**
+### **Step 2: Stop the Virtual Machine**
 **Important:** Before attaching a network interface to a VM, the VM must be in a **stopped (deallocated)** state.
 
 - In the top search bar, type **Virtual Machines**.  
@@ -27,12 +27,12 @@ Sign in with the credentials provided.
 - Wait for the VM status to show **Stopped (deallocated)**.  
 ![stop vm](assets/day9_01.png)
 
-#### **Step 3: Navigate to Networking Section**
+### **Step 3: Navigate to Networking Section**
 - Once the VM is stopped, in the left-hand menu under **Networking**, click on **Network settings**.  
 - In the **Network settings** page, click on **Attach network interface**.  
 ![navigate to networking](assets/day9_02.png)
 
-#### **Step 4: Select and attach the Network Interface**
+### **Step 4: Select and attach the Network Interface**
 In the network interface configuration:
 
 - **Network interface:** Click on the dropdown and select **datacenter-nic** from the list of available network interfaces  
@@ -42,7 +42,7 @@ In the network interface configuration:
 
 **Note:** The operation may take a few moments to complete.
 
-#### **Step 5: Verify NIC Attachment**
+### **Step 5: Verify NIC Attachment**
 Once the operation completes:
 
 - Stay on the **Network settings** page of **datacenter-vm**  
@@ -50,7 +50,7 @@ Once the operation completes:
 - The network interface should now be listed along with any existing NICs  
 ![verify nic attachment](assets/day9_04.png)
 
-#### **Step 6: Start the Virtual Machine**
+### **Step 6: Start the Virtual Machine**
 - Go to **Overview** page of **datacenter-vm**  
 - Click **Start**  
 - Wait for the VM to start successfully  

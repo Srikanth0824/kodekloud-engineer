@@ -90,7 +90,7 @@ In the **Add inbound security rule** panel, provide the following values:
 
 Click **Add** to create the rule.
 
-#### **Step 12: Verify Inbound Security Rules**
+#### **Step 10: Verify Inbound Security Rules**
 Once both rules are created:
 
 - Stay on the **Inbound security rules** page of **datacenter-nsg**  

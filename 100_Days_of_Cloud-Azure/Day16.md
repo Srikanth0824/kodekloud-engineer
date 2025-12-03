@@ -7,20 +7,20 @@ Create a new storage account named `nautilusst21673` and a `private` Blob contai
 
 ## Solution
 
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Search for Storage Accounts**
+### **Step 2: Search for Storage Accounts**
 - In the top search bar, type **Storage accounts**.  
 - Select **Storage accounts** from the list.  
 ![search storage](assets/day16_01.png)
 
-#### **Step 3: Create a New Storage Account**
+### **Step 3: Create a New Storage Account**
 - Click **Create** 
 
-#### **Step 4: Fill in the Basics Section**
+### **Step 4: Fill in the Basics Section**
 Provide the following values:
 
 - **Resource Group:** Select an existing resource group  
@@ -30,7 +30,7 @@ Provide the following values:
 
 Leave other options as default.
 
-#### **Step 5: Review and Create Storage Account**
+### **Step 5: Review and Create Storage Account**
 - Review all the configuration settings  
 - Click **Review + create**  
 - Wait for validation to complete  
@@ -38,7 +38,7 @@ Leave other options as default.
 
 Azure will now create the storage account. This may take a few moments.
 
-#### **Step 6: Verify Storage Account Creation**
+### **Step 6: Verify Storage Account Creation**
 Once deployment completes:
 
 - Click **Go to resource** or navigate to **Storage accounts**  
@@ -46,13 +46,13 @@ Once deployment completes:
 - Verify the storage account details on the **Overview** page  
 ![verify storage](assets/day16_03.png)
 
-#### **Step 7: Navigate to Containers**
+### **Step 7: Navigate to Containers**
 From the **nautilusst21673** storage account page:
 
 - In the left-hand menu under **Data storage**, click on **Containers**.  
 ![navigate containers](assets/day16_04.png)
 
-#### **Step 8: Create a New Container**
+### **Step 8: Create a New Container**
 Click **Add container** at the top of the page. In the **New container** panel, provide the following values:
 
 - **Name:** `nautilus-blob-26100`  
@@ -67,7 +67,7 @@ The container will be created immediately.
 - **Blob (anonymous read access for blobs only):** Blobs can be read anonymously
 - **Container (anonymous read access for containers and blobs):** Full anonymous read access
 
-#### **Step 9: Verify Container Creation**
+### **Step 9: Verify Container Creation**
 Once the container is created:
 
 - You should see **nautilus-blob-26100** listed in the containers view  

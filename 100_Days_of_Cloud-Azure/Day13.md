@@ -20,7 +20,7 @@ The Nautilus DevOps team is working on setting up secure SSH access for their vi
 
 ## Solution
 
-#### **Step 1: Verify VM is Running**
+### **Step 1: Verify VM is Running**
 
 First, ensure that the `datacenter-vm` is in a running state.
 
@@ -31,7 +31,7 @@ First, ensure that the `datacenter-vm` is in a running state.
 - Note the **Public IP address** of the VM  
 ![verify vm status](assets/day13_01.png)
 
-#### **Step 2: Copy the SSH public key from Azure Client Host**
+### **Step 2: Copy the SSH public key from Azure Client Host**
 
 Check and copy if the SSH public key exists on the Azure client host.
 ```bash
@@ -39,7 +39,7 @@ cat /root/.ssh/id_rsa.pub
 ```
 ![SSH public key](assets/day13_02.png)
 
-#### **Step 3: SSH into the VM as azureuser**
+### **Step 3: SSH into the VM as azureuser**
 
 Connect to the `datacenter-vm` using the `azureuser` account.
 ```bash
@@ -48,7 +48,7 @@ ssh azureuser@<PUBLIC_IP>
 ```
 ![ssh to vm](assets/day13_03.png)
 
-#### **Step 4: Switch to Root User on the VM**
+### **Step 4: Switch to Root User on the VM**
 
 Once logged in as `azureuser`, switch to the root user.
 ```bash
@@ -56,7 +56,7 @@ sudo su -
 ```
 ![switch to root](assets/day13_04.png)
 
-#### **Step 5: Create .ssh Directory for Root (if not exists)**
+### **Step 5: Create .ssh Directory for Root (if not exists)**
 
 Ensure the `.ssh` directory exists for the root user with proper permissions.
 ```bash
@@ -68,7 +68,7 @@ chmod 700 /root/.ssh
 ```
 ![folder permissions](assets/day13_05.png)
 
-#### **Step 6: Add Public Key to authorized_keys**
+### **Step 6: Add Public Key to authorized_keys**
 
 Add the root user's public key from the Azure client host to the `authorized_keys` file.
 ```bash
@@ -78,7 +78,7 @@ vi /root/.ssh/authorized_keys
 
 Paste the public key content (from Step 2) into this file. Each key should be on a separate line.
 
-#### **Step 7: Set Proper Permissions for authorized_keys**
+### **Step 7: Set Proper Permissions for authorized_keys**
 
 Ensure the `authorized_keys` file has the correct permissions.
 ```bash
@@ -89,7 +89,7 @@ chmod 600 /root/.ssh/authorized_keys
 chown root:root /root/.ssh/authorized_keys
 ```
 
-#### **Step 8: Verify SSH as root**
+### **Step 8: Verify SSH as root**
 
 Check if you are able to SSH to the `datacenter-vm` vm as `root` user. From the Azure client host terminal:  
 ```bash

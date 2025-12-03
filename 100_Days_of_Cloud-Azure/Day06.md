@@ -7,20 +7,20 @@ For this task, create a Virtual Network (VNet) named `datacenter-vnet` and one s
 
 ## Solution
 
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Search for Virtual Networks**
+### **Step 2: Search for Virtual Networks**
 - In the top search bar, type **Virtual Networks**.  
 - Select **Virtual Networks** from the list.  
 ![search vnet](assets/day4_01.png)
 
-#### **Step 3: Create a New Virtual Network**
+### **Step 3: Create a New Virtual Network**
 - Click **Create** 
 
-#### **Step 4: Fill in the Basics Section**
+### **Step 4: Fill in the Basics Section**
 Provide the following values:
   
 - **Resource Group:** Select an existing resource group or create a new one  
@@ -28,7 +28,7 @@ Provide the following values:
 - **Region:** `East US`  
 ![vnet basics](assets/day5_02.png)
 
-#### **Step 5: Configure IP Address Space**
+### **Step 5: Configure IP Address Space**
 In the **IP Addresses** tab:
 
 - **IPv4 address space:** Specify `10.0.0.0/16` IPv4 CIDR block  
@@ -36,7 +36,7 @@ In the **IP Addresses** tab:
 ![ip address space](assets/day6_03.png)  
 ![edit subnet](assets/day6_04.png)
 
-#### **Step 6: Review and Create**
+### **Step 6: Review and Create**
 - Review all the configuration settings  
 - Click **Review + create**  
 - Wait for validation to complete  

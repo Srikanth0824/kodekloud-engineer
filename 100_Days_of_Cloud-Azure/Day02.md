@@ -17,21 +17,21 @@ After completing these steps, make sure you can SSH into the virtual machine.
 
 ## Solution
 
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Search for Virtual Machines**
+### **Step 2: Search for Virtual Machines**
 - In the top search bar, type **Virtual Machines**.  
 - Select **Virtual Machines** from the list.  
 ![search vm](assets/day2_01.png)
 
-#### **Step 3: Create a New Virtual Machine**
+### **Step 3: Create a New Virtual Machine**
 - Click **Create** → **Virtual Machine**.  
 ![create vm](assets/day2_02.png)
 
-#### **Step 4: Fill in the Basics Section**
+### **Step 4: Fill in the Basics Section**
 Provide the following values:
 
 - **Resource Group:** Select the existing resource group  
@@ -43,19 +43,19 @@ Provide the following values:
 
 You can leave other fields as default in the **Basics** section.
 
-#### **Step 5: Configure Disk Settings**
+### **Step 5: Configure Disk Settings**
 Go to the **Disks** tab:
 
 - **OS disk size:** Set OS disk to **30 GiB**
 - **OS disk type:** Select **Standard HDD**  
 ![disk settings](assets/day2_04.png)
 
-#### **Step 6: Networking**
+### **Step 6: Networking**
 Make sure the **inbound ports** section allows **SSH(22)**.  
 Keep networking settings as default (Azure automatically creates/uses VNet, subnet, and NSG if needed).  
 ![network settings](assets/day2_05.png)
 
-#### **Step 7: Review and Create**
+### **Step 7: Review and Create**
 - Click **Review + create**  
 - Wait for validation  
 - Click **Create** to deploy the VM
@@ -67,7 +67,7 @@ chmod 400 <your_key.pem>
 
 Azure will now provision the Virtual Machine.
 
-#### **Step 8: SSH into the VM**
+### **Step 8: SSH into the VM**
 Once deployment completes:
 
 1. Go to **Virtual Machines → datacenter-vm**  

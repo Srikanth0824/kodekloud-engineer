@@ -11,20 +11,20 @@ Create a managed disk with the following requirements:
 
 ## Solution
 
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Search for Disks**
+### **Step 2: Search for Disks**
 - In the top search bar, type **Disks**.  
 - Select **Disks** from the list.  
 ![search disks](assets/day14_01.png)
 
-#### **Step 3: Create a New Managed Disk**
+### **Step 3: Create a New Managed Disk**
 - Click **Create** 
 
-#### **Step 4: Fill in the Basics Section**
+### **Step 4: Fill in the Basics Section**
 Provide the following values:
 
 - **Resource Group:** Select an existing resource group  
@@ -45,7 +45,7 @@ Leave other options as default.
 - **LRS:** Data is replicated three times within a single datacenter
 - **Use Case:** Cost-effective storage for infrequently accessed data
 
-#### **Step 5: Review and Create**
+### **Step 5: Review and Create**
 - Review all the configuration settings:
   - **Disk name:** devops-disk
   - **Size:** 2 GiB
@@ -57,7 +57,7 @@ Leave other options as default.
 
 Azure will now create the managed disk.
 
-#### **Step 6: Verify Disk Creation**
+### **Step 6: Verify Disk Creation**
 Once deployment completes:
 
 - Go to **Disks** from the Azure Portal  

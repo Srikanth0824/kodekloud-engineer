@@ -10,7 +10,7 @@ The Nautilus DevOps team is in the process of migrating some of their workloads 
 
 ## Solution
 
-#### **Step 1: Fetch the existing Resource group name**
+### **Step 1: Fetch the existing Resource group name**
 On the `azure-client` host:
 
 ```bash
@@ -23,7 +23,7 @@ az group list --query "[0].name" -o tsv
 ```
 ![resource group details](assets/day3_01.png) 
 
-#### **Step 2: Create VM using Azure CLI**
+### **Step 2: Create VM using Azure CLI**
 Replace `<existing_resource_group_name>` with the `name` that you've got in the previous step. Also make sure other details are set as per the task requirements.
 ```bash
 az vm create \                         
@@ -38,7 +38,7 @@ az vm create \
 ```
 ![vm creation details](assets/day3_02.png) 
 
-#### **Step 3: Verify VM state**
+### **Step 3: Verify VM state**
 Verify whether the VM is running or not.
 ```bash
 az vm get-instance-view \

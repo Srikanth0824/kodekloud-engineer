@@ -7,20 +7,20 @@ For this task, allocate a `Public IP` address, name it as `xfusion-pip`.
 
 ## Solution
 
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Search for Public IP Addresses**
+### **Step 2: Search for Public IP Addresses**
 - In the top search bar, type **Public IP addresses**.  
 - Select **Public IP addresses** from the list.  
 ![search public ip](assets/day7_01.png)
 
-#### **Step 3: Create a New Public IP Address**
+### **Step 3: Create a New Public IP Address**
 - Click **Create** 
 
-#### **Step 4: Fill in the Basics Section**
+### **Step 4: Fill in the Basics Section**
 Provide value(s) in the **Basics** tab as per the task description:
   
 - **Name:** `xfusion-pip`  
@@ -29,7 +29,7 @@ Provide value(s) in the **Basics** tab as per the task description:
 
 Leave other fields as default.
 
-#### **Step 5: Review and Create**
+### **Step 5: Review and Create**
 - Click **Review + create**  
 - Wait for validation to complete  
 - Review all the configuration settings  

@@ -7,20 +7,20 @@ Create a Virtual Network (VNet) named `devops-vnet` in the `East US` region with
 
 ## Solution
 
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Search for Virtual Networks**
+### **Step 2: Search for Virtual Networks**
 - In the top search bar, type **Virtual Networks**.  
 - Select **Virtual Networks** from the list.  
 ![search vnet](assets/day4_01.png)
 
-#### **Step 3: Create a New Virtual Network**
+### **Step 3: Create a New Virtual Network**
 - Click **Create** 
 
-#### **Step 4: Fill in the Basics Section**
+### **Step 4: Fill in the Basics Section**
 Provide the following values:
   
 - **Resource Group:** Select an existing resource group or create a new one  
@@ -28,7 +28,7 @@ Provide the following values:
 - **Region:** `East US`  
 ![vnet basics](assets/day4_02.png)
 
-#### **Step 5: Configure IP Address Space**
+### **Step 5: Configure IP Address Space**
 In the **IP Addresses** tab:
 
 - **IPv4 address space:** Use the default CIDR block (e.g., `10.0.0.0/16`) or specify your own IPv4 CIDR block  
@@ -38,7 +38,7 @@ In the **IP Addresses** tab:
 You can keep the default subnet settings or modify as needed.  
 
 
-#### **Step 6: Review and Create**
+### **Step 6: Review and Create**
 - Review all the configuration settings  
 - Click **Review + create**  
 - Wait for validation to complete  

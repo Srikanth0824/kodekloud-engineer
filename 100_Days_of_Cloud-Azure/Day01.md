@@ -9,20 +9,20 @@ The key pair type must be rsa.
 
 ---
 ## Solution
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Navigate to SSH Keys**
+### **Step 2: Navigate to SSH Keys**
 - In the top search bar, type **SSH keys**.
 - Select **SSH keys** from the Services list.
 ![search bar image](assets/day1_01.png)
 
-#### **Step 3: Create a New SSH Key**
+### **Step 3: Create a New SSH Key**
 - Click **Create** at the top of the SSH keys page.
 
-#### **Step 4: Fill in the Basics Section**
+### **Step 4: Fill in the Basics Section**
 Provide the following values:
 
 - **Resource Group:** Select an existing one 
@@ -32,7 +32,7 @@ Provide the following values:
 
 You can leave other fields as default.
 
-#### **Step 5: Review and Create**
+### **Step 5: Review and Create**
 - Click **Review + create**.
 - After validation, click **Create**.
 

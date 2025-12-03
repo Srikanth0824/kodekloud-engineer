@@ -10,27 +10,27 @@ Make sure the VM is properly assigned the public IP.
 
 ## Solution
 
-#### **Step 1: Log in to Azure Portal**
+### **Step 1: Log in to Azure Portal**
 Go to the Azure Portal:  
 https://portal.azure.com  
 Sign in with the credentials provided.
 
-#### **Step 2: Search for Virtual Machines**
+### **Step 2: Search for Virtual Machines**
 - In the top search bar, type **Virtual Machines**.  
 - Select **Virtual Machines** from the list.  
 ![search vm](assets/day2_01.png)
 
-#### **Step 3: Select the Virtual Machine**
+### **Step 3: Select the Virtual Machine**
 - From the list of virtual machines, locate and click on **devops-vm-pip**.  
 ![select vm](assets/day10_02.png)
 
-#### **Step 4: Navigate to Networking Section**
+### **Step 4: Navigate to Networking Section**
 - In the left-hand menu under **Networking**, click on **Network settings**.  
 - Identify the **Network Interface** attached to the VM.  
 - Click on the **Network Interface** name to open its settings.  
 ![navigate to networking](assets/day10_03.png)
 
-#### **Step 5: Access and edit Network Interface Settings**
+### **Step 5: Access and edit Network Interface Settings**
 You will be redirected to the Network Interface resource page.
 
 - In the left-hand menu under **Settings**, click on **IP configurations**.  
@@ -38,19 +38,19 @@ You will be redirected to the Network Interface resource page.
 - Click on the IP configuration name to edit it.  
 ![ip configurations](assets/day10_04.png)
 
-#### **Step 6: Associate Public IP Address**
+### **Step 6: Associate Public IP Address**
 In the IP configuration settings:
 
 - Under **Public IP address settings**, check the option **Associate public IP address**.  
 - **Public IP address:** Click on the dropdown and select **devops-pip** from the list of available public IP addresses.  
 ![associate public ip](assets/day10_05.png)
 
-#### **Step 8: Save the Configuration**
+### **Step 7: Save the Configuration**
 - Click **Save** to apply the changes.  
 
 **Note:** The operation may take a few moments to complete. Azure will associate the public IP address with the VM's network interface.
 
-#### **Step 9: Verify Public IP Assignment**
+### **Step 8: Verify Public IP Assignment**
 Once the operation completes:
 
 - Go back to **Virtual Machines** → **devops-vm-pip**  
