@@ -90,9 +90,9 @@ docker push xfusionacr3932.azurecr.io/pyapp:latest
 
 ### **Step 12: Check ACR Repositories**
 1. Go to **Container registries** → **xfusionacr3932**
-2. In the left menu, click **Srevices** → **Repositories**
+2. In the left menu, click **Services** → **Repositories**
 3. You should see **pyapp** listed
 4. Click on **pyapp**
 5. Verify the **latest** tag is present
 
-![verify repo](assets/acr_07.png)
+![verify repo](assets/day29_03.png)
