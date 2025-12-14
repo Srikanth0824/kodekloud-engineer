@@ -209,8 +209,8 @@ aws s3 ls s3://$S3_BUCKET/
 **NAT configuration script** passed as User Data has the following **Three Main Components**
 1. **IP Forwarding** - Allows the Linux instance to route packets (not just be an endpoint)
     - Think of your NAT instance as a post office:
-      - Without IP forwarding: The post office only accepts mail addressed to itself
-      - With IP forwarding: The post office accepts mail and forwards it to other addresses
+      - **Without IP forwarding**: The post office only accepts mail addressed to itself
+      - **With IP forwarding**: The post office accepts mail and forwards it to other addresses
 2. **Firewall Rules** - Controls which traffic is allowed to pass through
     - `iptables` is Linux's built-in firewall and packet filtering system. It processes network packets through different **tables** and **chains**.
     - **Tables:**
