@@ -65,3 +65,14 @@ Once deployment completes:
 ```bash
 ssh azureuser@<PublicIP>
 ```
+## CLI Solution
+```bash
+az vm create \
+  -g kml_rg_main-19157c42f5c34283 \ # replace it with your resource group name
+  -n datacenter-vm \
+  -l westus \
+  --image Ubuntu2204 \
+  --size Standard_B1s \
+  --admin-username azureuser \
+  --ssh-key-values ~/.ssh/id_rsa.pub 
+```
