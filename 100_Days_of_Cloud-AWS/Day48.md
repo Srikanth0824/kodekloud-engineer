@@ -1,4 +1,5 @@
-## Task: Integrating AWS SQS and SNS for Reliable Messaging
+## Task: Automating Infrastructure Deployment with AWS CloudFormation
+
 The Nautilus DevOps team needs to implement a Lambda function using a CloudFormation stack. Create a CloudFormation template named `/root/nautilus-lambda.yml` on the AWS client host and configure it to create the following components. The stack name must be `nautilus-lambda-app`.
 1. Create a Lambda function named `nautilus-lambda`.
 2. Use the Runtime `Python`.
