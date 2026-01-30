@@ -195,10 +195,9 @@ aws lambda add-permission \
 
 ### Step 8: Upload the file to the public bucket.
 Upload the sample.zip via the AWS CLI 
+
 ```bash
-aws s3api put-bucket-notification-configuration \
-  --bucket $PUBLIC_S3 \
-  --notification-configuration file://notification.json
+aws s3 cp /root/sample.zip s3://$PUBLIC_S3/
 ```
 
 ### Step 9: Configure bucket notification
@@ -216,6 +215,7 @@ cat <<EOF > notification.json
 }
 EOF
 ```
+
 Apply it
 ```bash
 aws s3api put-bucket-notification-configuration \
