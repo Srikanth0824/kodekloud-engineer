@@ -160,9 +160,10 @@ aws iam attach-role-policy \
 
 ### Step 6: Create Lambda function
 Update `/root/lambda-function.py` and replace placeholders with actual values
+```
 - <REPLACE-WITH-YOUR-DYNAMODB-TABLE>
 - <REPLACE-WITH-YOUR-PRIVATE-BUCKET>
-
+```
 Zip lambda code
 ```bash
 cd /root
@@ -191,6 +192,12 @@ aws lambda add-permission \
 ```
 
 ### Step 8: Configure bucket notification
+Upload `sample.zip` file from the AWS client host.
+```bash
+aws s3 cp /root/sample.zip s3://$PUBLIC_S3/
+```
+
+### Step 9: Configure bucket notification
 Create `notification.json` file
 ```bash
 # replace <ACCOUNT_ID> with actual ACCOUNT_ID
@@ -212,8 +219,9 @@ aws s3api put-bucket-notification-configuration \
   --notification-configuration file://notification.json
 ```
 
-### Step 9: Verification
+### Step 10: Verification
 Check private bucket, you should see the `sample.zip` file
+
 ```bash
 aws s3 ls s3://$PRIV_S3/
 ```
