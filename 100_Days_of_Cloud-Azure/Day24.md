@@ -73,6 +73,7 @@ az vm create \
   -l westus \
   --image Ubuntu2204 \
   --size Standard_B1s \
+  --storage-sku Standard_LRS \
   --admin-username azureuser \
   --ssh-key-values ~/.ssh/id_rsa.pub 
 ```
