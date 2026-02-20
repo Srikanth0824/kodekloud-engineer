@@ -158,11 +158,12 @@ aws iam attach-role-policy \
   --policy-arn arn:aws:iam::<ACCOUNT_ID>:policy/lambda_s3_dynamo_policy
 ```
 
-### Step 6: Create Lambda function
+### Step 7: Create Lambda function
 Update `/root/lambda-function.py` and replace placeholders with actual values
+```
 - <REPLACE-WITH-YOUR-DYNAMODB-TABLE>
 - <REPLACE-WITH-YOUR-PRIVATE-BUCKET>
-
+```
 Zip lambda code
 ```bash
 cd /root
@@ -179,7 +180,7 @@ aws lambda create-function \
   --zip-file fileb://lambda-function.zip
 ```
 
-### Step 7: Configure S3 Trigger for Lambda
+### Step 8: Configure S3 Permission for Lambda
 Add permission for S3 to invoke lambda
 ```bash
 aws lambda add-permission \
@@ -190,7 +191,13 @@ aws lambda add-permission \
   --source-arn arn:aws:s3:::$PUBLIC_S3
 ```
 
-### Step 8: Configure bucket notification
+### Step 9: Copy Lambda Function via AWS S3 CLI from AWS Client Host.
+Upload `sample.zip` file from the AWS client host.
+```bash
+aws s3 cp /root/sample.zip s3://$PUBLIC_S3/
+```
+
+### Step 10: Configure bucket notification
 Create `notification.json` file
 ```bash
 # replace <ACCOUNT_ID> with actual ACCOUNT_ID
@@ -212,8 +219,9 @@ aws s3api put-bucket-notification-configuration \
   --notification-configuration file://notification.json
 ```
 
-### Step 9: Verification
+### Step 11: Verification
 Check private bucket, you should see the `sample.zip` file
+
 ```bash
 aws s3 ls s3://$PRIV_S3/
 ```
