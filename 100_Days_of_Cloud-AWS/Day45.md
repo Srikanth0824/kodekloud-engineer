@@ -84,5 +84,5 @@ Create CodeBuild project as per the task description
   ![source stage](assets/day45_02.png)
 - Add build stage with AWS codebuild as build provider
 - Select previously created codebuild project from dropdown  
-  ![build stage](assets/day45_05.png)
+  ![build stage](assets/day45_03.png)
 - Skip other stages and create pipeline
