@@ -40,7 +40,7 @@ Once the operation completes:
 ![verify public ip](assets/day28_03.png)
 
 ### **Step 5: Update Inbound rules to Allow HTTP traffic**
-- Go to **Settings** → **Inbound security rules** of the NSG attached to the VM
+- Go to **Networking** → **Network Settings** of the NSG attached to the VM
 - Add inbound rule to allow HTTP traffic  
 ![add inbound rule](assets/day28_04.png)
 
