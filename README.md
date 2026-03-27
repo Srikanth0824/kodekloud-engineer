@@ -6,5 +6,6 @@ You're welcome to explore the approaches I've taken — but I highly encourage y
 > "You have your way; I have my way. As for the right way, the correct way, and the only way, it does not exist." -Friedrich Nietzsche
 
 ## Contributors (Thank you!!)
+- [Alistair Mackay](https://github.com/fireflycons)
 - [Marwan Ayman](https://github.com/maroayman)
 - [MOHD ISHAQ KHAN](https://github.com/mohdishaqkhan)
