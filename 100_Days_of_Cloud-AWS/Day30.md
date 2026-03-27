@@ -17,6 +17,8 @@ After the configuration, verify that the test file `xfusion-test.txt` appears in
 ## Solution
 
 ### Step 1: Set Variables
+
+Be sure to read the question carefully and adjust the values below to match before running this.
 ```bash
 VPC_NAME="xfusion-priv-vpc"
 PRIV_SUBNET_NAME="xfusion-priv-subnet"
@@ -47,6 +49,10 @@ echo "##### Network CIDR details #####"
 echo "VPC CIDR: $VPC_CIDR"
 echo "Private Subnet CIDR: $PRIV_SUBNET_CIDR"
 echo "################################"
+
+if [ "$VPC_ID" == "None" ] ; then
+    echo "Your variables are not set correctly (e.g. devops/xfusion/datacenter)"
+fi
 ```
 
 ### Step 3: Create a Public Subnet
@@ -129,36 +135,51 @@ aws ec2 authorize-security-group-ingress \
   --protocol -1 \
   --cidr "$VPC_CIDR"
 ```
-Allow outbound internet (allowed by default)
+Enable EC2 instance connect in the security group so we can connect to the instance from the console
 ```bash
-aws ec2 authorize-security-group-egress \
+INSTANCE_CONNECT_CIDR=$(curl -s https://ip-ranges.amazonaws.com/ip-ranges.json \
+| jq -r --arg REGION "$REGION" '
+  .prefixes[]
+  | select(.region == $REGION and .service == "EC2_INSTANCE_CONNECT")
+  | .ip_prefix
+')
+
+aws ec2 authorize-security-group-ingress \
   --group-id "$NAT_SG_ID" \
-  --protocol -1 \
-  --cidr 0.0.0.0/0
+  --protocol tcp \
+  --port 22 \
+  --cidr "$INSTANCE_CONNECT_CIDR"
 ```
 
-### Step 7: Launch NAT Instance (Amazon Linux 2)
+### Step 7: Launch NAT Instance (Amazon Linux 2023)
 Get AMI ID
 ```bash
 AMI_ID=$(aws ssm get-parameters \
-  --names /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2 \
+  --names /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64 \
   --query "Parameters[0].Value" \
   --output text)
 ```
-Script to configure linux instance to act as a NAT instance
+Script to configure Linux instance to act as a NAT instance
 ```bash
 USER_DATA='#!/bin/bash
 # Enable IP forwarding
 echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 sysctl -p
 
+# Install iptables
+yum install -y iptables-services
+
+# Discover interface used to talk to the outside world
+# In AL2023 it can be different every time!
+IFACE=$(ip -o route get 1.1.1.1 | awk '\''{for(i=1;i<=NF;i++) if ($i=="dev") print $(i+1)}'\'')
+
 # Configure iptables for NAT
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-iptables -A FORWARD -i eth0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-iptables -A FORWARD -i eth0 -o eth0 -j ACCEPT
+iptables -t nat -A POSTROUTING -o "$IFACE" -j MASQUERADE
+iptables -A FORWARD -i "$IFACE" -o "$IFACE" -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i "$IFACE" -o "$IFACE" -j ACCEPT
 
 # Save iptables rules
-service iptables save
+iptables-save > /etc/sysconfig/iptables
 '
 ```
 Launch NAT instance
@@ -173,6 +194,9 @@ NAT_INSTANCE_ID=$(aws ec2 run-instances \
   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$NAT_INSTANCE_NAME}]" \
   --query "Instances[0].InstanceId" \
   --output text)
+
+echo "Wait for instance to start"
+aws ec2 wait instance-running --instance-ids ${NAT_INSTANCE_ID}
 ```
 
 ### Step 8: Disable Source/Destination Check (CRITICAL)
@@ -200,7 +224,7 @@ aws ec2 create-route \
 ```
 
 ### Step 10: Verification
-Check if the `xfusion-test.txt` file got uploaded to S3 bucket
+Check if the `xfusion-test.txt` file got uploaded to S3 bucket. It may take a minute or two to appear.
 ```bash
 aws s3 ls s3://$S3_BUCKET/
 ```
