@@ -8,9 +8,11 @@ The following components already exist in the environment:
 
 Your task is to:
 - Create a new public subnet named `xfusion-pub-subnet` in the existing VPC.
-- Launch a NAT Instance in the public subnet using an Amazon Linux 2 AMI and name it `xfusion-nat-instance`. Configure this instance to act as a NAT instance. Make sure to use a custom security group for this instance.
+- Launch a NAT Instance in the public subnet using an Amazon Linux 2023 AMI and name it `xfusion-nat-instance`. Configure this instance to act as a NAT instance. Make sure to use a custom security group for this instance.
 
 After the configuration, verify that the test file `xfusion-test.txt` appears in the S3 bucket `xfusion-nat-31533`. This indicates successful internet access from the private EC2 instance via the NAT Instance.
+
+**Note**: `iptables` is not installed by default on `Amazon Linux 2023`. You will need to install and enable it before configuring NAT setup.
 
 ---
 
