@@ -76,9 +76,9 @@ ssh azureuser@<PUBLIC_IP>
 ![attach disk portal](assets/day25_04.png)
 
 ### **Step 11: SSH into VM and Identify the New Disk**
-
+```Now start the vm ```
 ```bash
-# SSH into the VM (if not already connected)
+# then SSH into the VM 
 ssh azureuser@<PUBLIC_IP>
 
 # List all block devices
